@@ -36,16 +36,26 @@
                 </tr>
             </tbody>
         </table>
+        <button class="btn btn-primary" v-on:click="createNewJob()">
+            Create new job
+        </button>
     </div>
 </template>
 
 <script>
 import { get } from "@/shared/fetch";
+import router from "@/router";
+
 export default {
     data() {
         return {
             jobs: [],
         };
+    },
+    methods: {
+        createNewJob() {
+            router.push({ name: "CreateJob" });
+        },
     },
     async created() {
         let jobs = await get("api/jobs");
