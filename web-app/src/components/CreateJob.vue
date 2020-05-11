@@ -46,7 +46,7 @@
                 />
                 <small class="text-danger" v-if="failed">Creation failed</small>
             </div>
-            <button class="btn btn-primary" type="submit">Create New Manager</button>
+            <button class="btn btn-primary" type="submit">Create New Job</button>
         </form>
     </div>
 </template>
