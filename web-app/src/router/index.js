@@ -63,6 +63,6 @@ router.beforeEach((to, from, next) => {
     else if (to.name == 'ManagerCreate' && (userRole !== 'Manager')) next({ name: 'Home' });
     else if (to.name == 'ModelCreate' && (userRole !== 'Manager')) next({ name: 'Home' });
     else next();
-  })
+})
 
 export default router;

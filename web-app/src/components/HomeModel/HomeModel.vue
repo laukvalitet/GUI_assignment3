@@ -2,13 +2,13 @@
     <div class="card-deck">
         <div class="card" v-for="job in jobs" :key="job.efJobId">
             <div class="card-body">
-                <h4 class="card-title">{{ job.location }}  {{job.date}}</h4>
+                <h4 class="card-title">{{ job.location }} {{job.date}}</h4>
                 <div class="card-text">
-                <h5>Description:</h5> <br>
+                    <h5>Description:</h5>
+                    <br />
                     <h6>{{job.comments}}</h6>
-                    <button type="button" class="btn btn-secondary">Secondary</button>
                 </div>
-
+                <router-link :to="{name: 'Job', params: { id: job.efJobId }}" class="stretched-link"></router-link>
             </div>
         </div>
     </div>
@@ -17,23 +17,22 @@
 <script>
 import { get } from "@/shared/fetch";
 
-
 export default {
     data() {
-        return{
+        return {
             jobs: [],
-        }
+        };
     },
     created() {
         this.getModelJobs();
     },
-    methods:{
+    methods: {
         async getModelJobs() {
             let result = await get("api/jobs");
-            if(result.status==200){
+            if (result.status == 200) {
                 this.jobs = await result.json();
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
