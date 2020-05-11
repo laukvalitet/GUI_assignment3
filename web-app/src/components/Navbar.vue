@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light fixed-top">
         <router-link class="nav-link" to="/">Home</router-link>
         <router-link class="nav-link" to="Register">Register</router-link>
         <router-link class="nav-link" to="Login" v-if="!isLoggedIn"

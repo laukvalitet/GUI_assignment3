@@ -1,7 +1,7 @@
 <template>
-    <div id="app" class="container-fluid">
+    <div id="app" class="w-100 h-100">
         <navbar></navbar>
-        <router-view class="container" />
+        <router-view class="container custom-margin" />
     </div>
 </template>
 
