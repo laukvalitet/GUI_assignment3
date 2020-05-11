@@ -6,6 +6,12 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
+                <li class="nav-item" v-if="foo">
+                    <router-link class="nav-link" to="/CreateModel">Model(Add)</router-link>
+                </li>
+                <li class="nav-item" v-if="foo">
+                    <router-link class="nav-link" to="/CreateManager">Manager(Add)</router-link>
+                </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item mr-2">
