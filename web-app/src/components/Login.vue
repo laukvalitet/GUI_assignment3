@@ -34,6 +34,7 @@
 
 <script>
 import { post } from "@/shared/fetch.js";
+import router from "@/router";
 export default {
     data() {
         return {
@@ -52,6 +53,7 @@ export default {
                     this.failed = false;
                     const responseJson = await response.json();
                     localStorage.setItem("jwt", responseJson.jwt);
+                    router.push({ name: "Home" });
                 } else {
                     this.handleFailedLogin();
                 }
