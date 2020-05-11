@@ -28,6 +28,7 @@
                     v-for="job in jobs"
                     :key="job.efJobId"
                     v-on:click="goToJob(job.efJobId)"
+                    class="hoverable"
                 >
                     <td scope="row">{{ job.customer }}</td>
                     <td>{{ job.location }}</td>
@@ -68,3 +69,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.hoverable:hover {
+    cursor: pointer;
+}
+</style>
