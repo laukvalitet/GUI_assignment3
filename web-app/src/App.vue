@@ -1,10 +1,24 @@
 <template>
-    <div id="app" class="container-fluid">
-        <nav class="navbar navbar-light bg-light">
-            <router-link class="nav-link" to="/">Home</router-link>
-            <router-link class="nav-link" to="Login">Login</router-link>
-        </nav>
+    <div id="app" class="w-100 h-100 bg-dark">
         <router-view class="container" />
+        <div class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">ModelPage</a>
+                <ul class="nav navbar-nav mr-2">
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/">Home</router-link>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item mr-2">
+                        <router-link class="nav-link" to="/Register">Register</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/Login">Login</router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -19,4 +33,10 @@
 #nav a.router-link-exact-active {
     color: #42b983;
 }
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  }
 </style>
