@@ -25,7 +25,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="job in jobs" :key="job.efJobId">
+                <tr
+                    v-for="job in jobs"
+                    :key="job.efJobId"
+                    v-on:click="goToJob(job.efJobId)"
+                >
                     <td scope="row">{{ job.customer }}</td>
                     <td>{{ job.location }}</td>
                     <td>{{ job.startDate }}</td>
@@ -55,6 +59,9 @@ export default {
     methods: {
         createNewJob() {
             router.push({ name: "CreateJob" });
+        },
+        goToJob(jobid) {
+            router.push({ name: "Job", params: { id: jobid } });
         },
     },
     async created() {
