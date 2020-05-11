@@ -47,17 +47,17 @@ export default {
     },
 
     methods: {
-        handleSubmit() {
-            post("api/Account/Login", this.user).then(async response => {
-                if (response.status === 200) {
-                    this.failed = false;
-                    const responseJson = await response.json();
-                    localStorage.setItem("jwt", responseJson.jwt);
-                    router.push({ name: "Home" });
-                } else {
-                    this.handleFailedLogin();
-                }
-            });
+        async handleSubmit() {
+            const response = await post("api/Account/Login", this.user);
+
+            if (response.status === 200) {
+                this.failed = false;
+                const responseJson = await response.json();
+                localStorage.setItem("jwt", responseJson.jwt);
+                router.push({ name: "Home" });
+            } else {
+                this.handleFailedLogin();
+            }
         },
         handleFailedLogin() {
             this.failed = true;
