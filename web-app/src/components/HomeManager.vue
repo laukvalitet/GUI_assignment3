@@ -1,13 +1,57 @@
 <template>
-    <div class="col-12 col-lg-6 col-xl-4">
-        <ul class="list-group">
-            <li class="list-group-item">asd</li>
-            <li class="list-group-item">asd</li>
-            <li class="list-group-item">asd</li>
-        </ul>
+    <div class="col-12">
+        <h1>Jobs:</h1>
+        <p>Click on a job to view more specifics</p>
+        <table
+            class="table table-striped table-hover table-light table-bordered"
+        >
+            <thead class="thead-dark">
+                <tr>
+                    <td scope="col">
+                        Customer
+                    </td>
+                    <td scope="col">
+                        Location
+                    </td>
+                    <td scope="col">
+                        Date
+                    </td>
+                    <td scope="col">
+                        Days
+                    </td>
+                    <td scope="col">
+                        Models
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="job in jobs" :key="job.efJobId">
+                    <td scope="row">{{ job.customer }}</td>
+                    <td>{{ job.location }}</td>
+                    <td>{{ job.startDate }}</td>
+                    <td>{{ job.days }}</td>
+                    <td>
+                        {{ job.jobModels !== null ? job.jobModels.length : 0 }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
 <script>
-export default {};
+import { get } from "@/shared/fetch";
+export default {
+    data() {
+        return {
+            jobs: [],
+        };
+    },
+    async created() {
+        let jobs = await get("api/jobs");
+        if (jobs.status === 200) {
+            this.jobs = await jobs.json();
+        }
+    },
+};
 </script>
