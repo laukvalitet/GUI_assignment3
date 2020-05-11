@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import { BootstrapVue } from "bootstrap-vue";
 import Login from "@/components/Login";
 import Home from "@/components/Home";
-import Job from "@/components/Job";
+import CreateJob from "@/components/CreateJob";
 import ManagerCreate from "@/components/ManagerCreate";
 import ModelCreate from "@/components/ModelCreate";
 
@@ -35,8 +35,8 @@ const routes = [
     },
     {
         path: "/Job",
-        name: "Job",
-        component: Job,
+        name: "CreateJob",
+        component: CreateJob,
     },
 ];
 

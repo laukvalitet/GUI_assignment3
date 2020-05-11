@@ -54,7 +54,7 @@ export default {
     },
     methods: {
         createNewJob() {
-            router.push({ name: "Job" });
+            router.push({ name: "CreateJob" });
         },
     },
     async created() {
