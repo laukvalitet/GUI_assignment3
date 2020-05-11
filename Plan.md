@@ -25,7 +25,7 @@ Following might be showed
 Contains two subcomponents, and will choose which one to render depending on user-role
 If not loggedin - show login-component
 
-##### HomeManager
+##### HomeManager (Christoffer)
 
 Shows a list of all jobs. If a job is clicked go to ManagerJob/{:id}
 Also button to add job. Will route to ModelJob
