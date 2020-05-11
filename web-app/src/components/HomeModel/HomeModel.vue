@@ -1,20 +1,28 @@
 <template>
+
+  <div>
+  <h3>Your upcoming jobs:</h3>
     <div class="card-deck">
         <div class="card" v-for="job in jobs" :key="job.efJobId">
             <div class="card-body">
-                <h4 class="card-title">{{ job.location }}  {{new Date(job.startDate).toLocaleDateString()}}</h4>
+                <h4 class="card-title">{{ job.location }} {{new Date(job.startDate).toLocaleDateString()}} </h4>
                 <div class="card-text">
-                  <h5>Description:</h5> <br>
+                  <h5>Description:</h5>
                   <h6>{{job.comments}}</h6>
-                  <button type="button" class="btn btn-secondary">View details</button>
+                  <h5>Duration: {{job.days}} days</h5>
+                  <button type="button" class="btn btn-secondary"
+                  v-on:click="goToJobDetails(job.efJobId)" >View details </button>
+                  
                 </div>
             </div>
         </div>
     </div>
+  </div>
 </template>
 
 <script>
 import { get } from "@/shared/fetch";
+import router from "@/router";
 
 
 export default {
@@ -32,7 +40,13 @@ export default {
             if(result.status==200){
                 this.jobs = await result.json();
             }
-        }
-    }
+          },
+
+            goToJobDetails(jobid) {
+              router.push({ name: "Job", params: { id: jobid }});
+            }
+        },
+        
+    
 }
 </script>

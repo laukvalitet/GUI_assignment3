@@ -1,11 +1,14 @@
 <template>
     <div class="container">
         <job-manager v-if="userRole === 'Manager'"></job-manager>
+        <job-model v-if="userRole === 'Model'"></job-model>
     </div>
 </template>
 
 <script>
 import JobManager from "@/components/JobManager";
+import JobModel from "@/components/HomeModel/JobModel";
+
 import decode from "@/shared/decode.js";
 export default {
     data() {
@@ -15,6 +18,7 @@ export default {
     },
     components: {
         JobManager,
+        JobModel
     },
     created() {
         const jwt = localStorage.getItem("jwt");
