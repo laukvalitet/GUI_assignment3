@@ -1,4 +1,5 @@
 <template>
+    <!-- Needs tot check for role but otherwise neato -->
     <home-manager></home-manager>
 </template>
 

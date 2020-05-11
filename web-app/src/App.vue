@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style>
+.custom-margin {
+    padding-top: 56px;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
