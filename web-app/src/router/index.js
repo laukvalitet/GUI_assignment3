@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import { BootstrapVue } from "bootstrap-vue";
 import Login from "@/components/Login";
 import Home from "@/components/Home";
-import Register from "@/components/Register";
+import ManagerAdd from "@/components/ManagerAdd";
+import ModelAdd from "@/components/ModelAdd";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -22,9 +23,14 @@ const routes = [
         component: Login,
     },
     {
-        path: "/Register",
-        name: "Register",
-        component: Register,
+        path: "/ModelAdd",
+        name: "ModelAdd",
+        component: ModelAdd,
+    },
+    {
+        path: "/ManagerAdd",
+        name: "ManagerAdd",
+        component: ManagerAdd,
     },
 ];
 
