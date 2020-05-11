@@ -1,45 +1,14 @@
 <template>
     <div id="app" class="container-fluid">
-        <nav class="navbar navbar-light bg-light">
-            <router-link class="nav-link" to="/">Home</router-link>
-            <router-link class="nav-link" to="Login" v-if="!isLoggedIn"
-                >Login</router-link
-            >
-            <a
-                href="javascript:void(0);"
-                class="nav-link"
-                v-if="isLoggedIn"
-                v-on:click="logout"
-                >Log out</a
-            >
-        </nav>
+        <navbar></navbar>
         <router-view class="container" />
     </div>
 </template>
 <script>
+import Navbar from "@/components/Navbar";
 export default {
-    data() {
-        return {
-            isLoggedIn: false,
-        };
-    },
-    methods: {
-        checkLoggedIn() {
-            const jwt = localStorage.getItem("jwt");
-            this.isLoggedIn = !!jwt;
-        },
-        logout() {
-            localStorage.removeItem("jwt");
-            this.checkLoggedIn();
-        },
-    },
-    created() {
-        this.checkLoggedIn();
-    },
-    watch: {
-        $route() {
-            this.checkLoggedIn();
-        },
+    components: {
+        Navbar,
     },
 };
 </script>
