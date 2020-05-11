@@ -19,9 +19,6 @@
                     <td scope="col">
                         Days
                     </td>
-                    <td scope="col">
-                        Models
-                    </td>
                 </tr>
             </thead>
             <tbody>
@@ -34,9 +31,6 @@
                     <td>{{ job.location }}</td>
                     <td>{{ job.startDate }}</td>
                     <td>{{ job.days }}</td>
-                    <td>
-                        {{ job.jobModels !== null ? job.jobModels.length : 0 }}
-                    </td>
                 </tr>
             </tbody>
         </table>
