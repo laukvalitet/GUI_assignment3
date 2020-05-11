@@ -1,7 +1,9 @@
 <template>
     <div class="col-12">
         <h1>Jobs:</h1>
-        <p>Click on a job to view more specifics</p>
+        <h5 style="color: red">
+            <b>Click on a job to view more specifics</b>
+        </h5>
         <table
             class="table table-striped table-hover table-light table-bordered"
         >
@@ -29,7 +31,7 @@
                 >
                     <td scope="row">{{ job.customer }}</td>
                     <td>{{ job.location }}</td>
-                    <td>{{ job.startDate }}</td>
+                    <td>{{ new Date(job.startDate).toLocaleString() }}</td>
                     <td>{{ job.days }}</td>
                 </tr>
             </tbody>
