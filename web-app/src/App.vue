@@ -1,6 +1,6 @@
 <template>
-    <div id="app" class="container-fluid w-100 h-100">
-        <router-view class="container" />
+    <div id="app" class="w-100 h-100">
+        <router-view class="custom-margin container"/>
         <globalNavbar />
     </div>
 </template>
@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style>
+.custom-margin {
+  padding-top: 56px;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
