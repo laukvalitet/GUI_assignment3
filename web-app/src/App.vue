@@ -9,32 +9,9 @@
 import globalNavbar from "./components/Navbar.vue";
 
 export default {
-    data() {
-        return {
-            isLoggedIn: false,
-        };
-    },
     components: {
         globalNavbar
-    },
-    methods: {
-        checkLoggedIn() {
-            const jwt = localStorage.getItem("jwt");
-            this.isLoggedIn = !!jwt;
-        },
-        logout() {
-            localStorage.removeItem("jwt");
-            this.checkLoggedIn();
-        },
-    },
-    created() {
-        this.checkLoggedIn();
-    },
-    watch: {
-        $route() {
-            this.checkLoggedIn();
-        },
-    },
+    }
 };
 </script>
 
