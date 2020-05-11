@@ -30,7 +30,7 @@ If not loggedin - show login-component
 Shows a list of all jobs. If a job is clicked go to ManagerJob/{:id}
 Also button to add job. Will route to ModelJob
 
-##### HomeModel
+##### HomeModel (Lau)
 
 Shows a list of jobs for a specific model.
 
