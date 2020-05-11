@@ -1,10 +1,14 @@
 <template>
     <div class="w-100 h-100">
-        <div class="w-100 h-100">
-            <p>Model: This isnt done yet</p>
-        </div>
-        <div class="w-100 h-100">
-            <p>Manager: This isnt done yet</p>
-        </div>
+        <home-mananger></home-mananger>
     </div>
 </template>
+
+<script>
+import HomeManager from "@/components/HomeManager";
+export default {
+    components: {
+        HomeManager,
+    },
+};
+</script>

@@ -2,7 +2,6 @@
     <div id="app" class="container-fluid">
         <navbar></navbar>
         <router-view class="container" />
-        <globalNavbar />
     </div>
 </template>
 
