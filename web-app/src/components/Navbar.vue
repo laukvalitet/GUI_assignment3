@@ -11,7 +11,7 @@
                 <router-link class="nav-link" to="Login" v-if="!isLoggedIn">Login</router-link>
                 <a
                     href="javascript:void(0);"
-                    class="nav-link text-dark"
+                    class="nav-link"
                     v-if="isLoggedIn"
                     v-on:click="logout"
                 >Log out</a>
