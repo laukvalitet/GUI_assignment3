@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import decode from "@/shared/decode.js";
 import { BootstrapVue } from "bootstrap-vue";
 import Login from "@/components/Login";
 import Home from "@/components/Home";
@@ -51,5 +52,17 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes,
 });
+
+router.beforeEach((to, from, next) => {
+    var userRole = null;
+    const jwt = localStorage.getItem("jwt");
+    if (jwt !== null) {
+        userRole = decode(jwt).role;
+    }
+    if (to.name !== 'Login' && (userRole !== 'Manager' && userRole !== 'Model')) next({ name: 'Login' });
+    else if (to.name == 'ManagerCreate' && (userRole !== 'Manager')) next({ name: 'Home' });
+    else if (to.name == 'ModelCreate' && (userRole !== 'Manager')) next({ name: 'Home' });
+    else next();
+  })
 
 export default router;
