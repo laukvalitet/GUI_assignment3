@@ -4,33 +4,33 @@ The plan of attack.
 
 ## Components/views
 
-#### Login
+#### Login (Done?)
 
 Can be accessed without being authorized.
 Will need to save credentials to local-storage after login is succesful and route to some **Home Component**?
 
-#### NavBar
+#### NavBar (Done? / Needs population still ofc)
 
 Should just be rendered in the App.vue as that will show it on all sites
 Needs to be populated depending on user-role
 Following might be showed
 
-- Login/Logout
-- Home
-- Create Model (manager)
-- Create Manager (managers)
+-   Login/Logout
+-   Home
+-   Create Model (manager)
+-   Create Manager (managers)
 
 #### HomeComponent
 
 Contains two subcomponents, and will choose which one to render depending on user-role
 If not loggedin - show login-component
 
-##### HomeManager
+##### HomeManager (Christoffer)
 
 Shows a list of all jobs. If a job is clicked go to ManagerJob/{:id}
 Also button to add job. Will route to ModelJob
 
-##### HomeModel
+##### HomeModel (Lau)
 
 Shows a list of jobs for a specific model.
 
@@ -51,12 +51,14 @@ Models on the job will have a "Remove" button, and models not on the job will ha
 Can add an expense to that specific job
 
 #### Create Manager
+
 Simpel form til at lave en manager
 
 #### Create Model
+
 Simpel form til at lave en model
 
 ## Roles
 
-- Manager
-- Model
+-   Manager
+-   Model

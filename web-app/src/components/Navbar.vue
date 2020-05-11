@@ -1,33 +1,19 @@
 <template>
-    <div class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">ModelPage</a>
-            <ul class="nav navbar-nav mr-2">
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/">Home</router-link>
-                </li>
-                <li class="nav-item" v-if="foo">
-                    <router-link class="nav-link" to="/CreateModel">Model(Add)</router-link>
-                </li>
-                <li class="nav-item" v-if="foo">
-                    <router-link class="nav-link" to="/CreateManager">Manager(Add)</router-link>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item mr-2">
-                    <router-link class="nav-link" to="/Register">Register</router-link>
-                </li>
-                <li class="nav-item" v-if="!isLoggedIn">
-                    <router-link class="nav-link" to="/Login">Login</router-link>
-                </li>
-                <li class="nav-item" v-if="isLoggedIn">
-                    <a type="button" class="nav-link" v-on:click="logout" v-if="!isLoggedIn">Log Out</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <nav class="navbar navbar-light bg-light">
+        <router-link class="nav-link" to="/">Home</router-link>
+        <router-link class="nav-link" to="Register">Register</router-link>
+        <router-link class="nav-link" to="Login" v-if="!isLoggedIn"
+            >Login</router-link
+        >
+        <a
+            href="javascript:void(0);"
+            class="nav-link"
+            v-if="isLoggedIn"
+            v-on:click="logout"
+            >Log out</a
+        >
+    </nav>
 </template>
-
 <script>
 export default {
     data() {

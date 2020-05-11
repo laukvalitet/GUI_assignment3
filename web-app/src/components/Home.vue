@@ -11,7 +11,7 @@
                 <li class="list-group-item">Vestibulum at eros</li>
             </ul>
         </div>
-        <div class="w-100 h-100" v-if="bar">
+        <div class="w-100 h-100">
             <p>Manager: This isnt done yet</p>
         </div>
     </div>

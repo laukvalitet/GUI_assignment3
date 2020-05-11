@@ -6,12 +6,11 @@
 </template>
 
 <script>
-import globalNavbar from "./components/Navbar.vue";
-
+import Navbar from "@/components/Navbar";
 export default {
     components: {
-        globalNavbar
-    }
+        Navbar,
+    },
 };
 </script>
 
