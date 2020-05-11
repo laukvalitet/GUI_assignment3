@@ -1,5 +1,7 @@
 <template>
-    <div class="d-flex flex-column w-100 h-100 align-items-center justify-content-center">
+    <div
+        class="d-flex flex-column w-100 h-100 align-items-center justify-content-center"
+    >
         <h1 class="w-50">Login</h1>
         <form class="w-50" @submit.prevent="handleSubmit">
             <div class="form-group">
@@ -35,6 +37,7 @@
 <script>
 import { post } from "@/shared/fetch.js";
 import router from "@/router";
+
 export default {
     data() {
         return {
