@@ -1,7 +1,7 @@
 <template>
-    <div class="col-lg-4 col-xl-2 col-12">
-        <h1>Login</h1>
-        <form @submit.prevent="handleSubmit">
+    <div class="d-flex flex-column w-100 h-100 align-items-center justify-content-center">
+        <h1 class="w-50">Login</h1>
+        <form class="w-50" @submit.prevent="handleSubmit">
             <div class="form-group">
                 <label for="email">
                     Email:

@@ -2,8 +2,10 @@
     <div id="app" class="container-fluid">
         <navbar></navbar>
         <router-view class="container" />
+        <globalNavbar />
     </div>
 </template>
+
 <script>
 import Navbar from "@/components/Navbar";
 export default {
@@ -12,6 +14,7 @@ export default {
     },
 };
 </script>
+
 <style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -22,5 +25,13 @@ export default {
 
 #nav a.router-link-exact-active {
     color: #42b983;
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #ecf0f1 !important;
 }
 </style>

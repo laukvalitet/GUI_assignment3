@@ -40,3 +40,12 @@ export default {
     },
 };
 </script>
+<<<<<<< HEAD
+=======
+
+<style>
+.bg-custom {
+    background-color: #34495e !important;
+}
+</style>
+>>>>>>> 23de51712f0803e835d8ef43bb5cc5ed88eaff8a
