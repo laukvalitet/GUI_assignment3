@@ -31,10 +31,11 @@ namespace ModelsApi
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddCors();
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(System.Environment.GetEnvironmentVariable("ModelDb")));
+            
+            
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);

@@ -127,7 +127,7 @@ namespace ModelsApi.Controllers
                 new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
                 new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds().ToString()),
             };
-
+            
             var key = Encoding.ASCII.GetBytes(_appSettings.SecretKey);
             var token = new JwtSecurityToken(
                  new JwtHeader(new SigningCredentials(
