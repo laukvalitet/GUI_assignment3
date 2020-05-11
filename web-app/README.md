@@ -1,4 +1,4 @@
-# models-web-app
+# web-app
 
 ## Project setup
 ```
