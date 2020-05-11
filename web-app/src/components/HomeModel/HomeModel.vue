@@ -10,8 +10,8 @@
                   <h5>Description:</h5>
                   <h6>{{job.comments}}</h6>
                   <h5>Duration: {{job.days}} days</h5>
-                  <button type="button" class="btn btn-secondary"
-                  v-on:click="goToJobDetails(job.efJobId)" >View details </button>
+                  <router-link :to="{name: 'Job', params: { id: job.efJobId }}" class="stretched-link"></router-link>
+
                   
                 </div>
             </div>
@@ -24,20 +24,19 @@
 import { get } from "@/shared/fetch";
 import router from "@/router";
 
-
 export default {
     data() {
-        return{
+        return {
             jobs: [],
-        }
+        };
     },
     created() {
         this.getModelJobs();
     },
-    methods:{
+    methods: {
         async getModelJobs() {
             let result = await get("api/jobs");
-            if(result.status==200){
+            if (result.status == 200) {
                 this.jobs = await result.json();
             }
           },
