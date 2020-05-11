@@ -1,7 +1,5 @@
 <template>
-    <div class="w-100 h-100">
-        <home-mananger></home-mananger>
-    </div>
+    <home-manager></home-manager>
 </template>
 
 <script>
