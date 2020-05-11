@@ -15,6 +15,7 @@
     </nav>
 </template>
 <script>
+import router from "@/router";
 export default {
     data() {
         return {
@@ -29,6 +30,7 @@ export default {
         logout() {
             localStorage.removeItem("jwt");
             this.checkLoggedIn();
+            router.push({ name: "Login" });
         },
     },
     created() {
