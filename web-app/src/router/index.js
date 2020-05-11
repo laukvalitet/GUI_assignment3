@@ -5,6 +5,7 @@ import Login from "@/components/Login";
 import Home from "@/components/Home";
 import ManagerAdd from "@/components/ManagerAdd";
 import ModelAdd from "@/components/ModelAdd";
+import Job from "@/components/Job";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -31,6 +32,11 @@ const routes = [
         path: "/ManagerAdd",
         name: "ManagerAdd",
         component: ManagerAdd,
+    },
+    {
+        path: "/Job",
+        name: "Job",
+        component: Job,
     },
 ];
 
