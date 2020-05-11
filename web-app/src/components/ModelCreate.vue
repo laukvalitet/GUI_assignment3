@@ -240,6 +240,8 @@ export default {
     },
     methods: {
         async handleSubmit() {
+            this.supermodel.height = parseInt(this.supermodel.height);
+            this.supermodel.shoeSize = parseInt(this.supermodel.shoeSize);
             let response = await post("api/Models", this.supermodel);
             console.log(response);
             if (response.status === 201) {
