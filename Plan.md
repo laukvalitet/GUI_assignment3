@@ -9,7 +9,7 @@ The plan of attack.
 Can be accessed without being authorized.
 Will need to save credentials to local-storage after login is succesful and route to some **Home Component**?
 
-#### NavBar
+#### NavBar (Done? / Needs population still ofc)
 
 Should just be rendered in the App.vue as that will show it on all sites
 Needs to be populated depending on user-role

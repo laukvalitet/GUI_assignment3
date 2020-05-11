@@ -1,6 +1,7 @@
 <template>
     <nav class="navbar navbar-light bg-light">
         <router-link class="nav-link" to="/">Home</router-link>
+        <router-link class="nav-link" to="Register">Register</router-link>
         <router-link class="nav-link" to="Login" v-if="!isLoggedIn"
             >Login</router-link
         >
@@ -40,12 +41,9 @@ export default {
     },
 };
 </script>
-<<<<<<< HEAD
-=======
 
 <style>
 .bg-custom {
     background-color: #34495e !important;
 }
 </style>
->>>>>>> 23de51712f0803e835d8ef43bb5cc5ed88eaff8a
