@@ -2,30 +2,11 @@
     <div class="card-deck">
         <div class="card" v-for="job in jobs" :key="job.efJobId">
             <div class="card-body">
-                <h4 class="card-title">{{ job.location }}</h4>
+                <h4 class="card-title">{{ job.location }}  {{job.date}}</h4>
                 <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                    This card has supporting text below as a natural lead-in to
-                    additional content.
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
+                    <h5>Description:</h5> <br>
+                    <h6>{{job.comments}}</h6>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
                 </p>
             </div>
         </div>
@@ -44,13 +25,13 @@ export default {
         }
     },
     created() {
-        this.jobs = getModelJobs();
+        getModelJobs();
     },
     methods:{
-        getModelJobs() {
+        async getModelJobs() {
             let result = await get("api/jobs");
             if(result.status==200){
-                modelJobs = await result.json();
+                jobs = await result.json();
             }
         }
     }
