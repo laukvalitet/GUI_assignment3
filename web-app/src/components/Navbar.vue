@@ -4,8 +4,8 @@
             <ul class="nav navbar-nav">
                 <router-link class="navbar-brand" to="/">ModelTron2000</router-link>
                 <router-link class="nav-link" to="/">Home</router-link>
-                <router-link class="nav-link" to="/ModelAdd">Model(Add)</router-link>
-                <router-link class="nav-link" to="/ManagerAdd">Manager(Add)</router-link>
+                <router-link class="nav-link" to="/ModelCreate">Model(Create)</router-link>
+                <router-link class="nav-link" to="/ManagerCreate">Manager(Create)</router-link>
             </ul>
             <ul class="nav navbar-nav">
                 <router-link class="nav-link" to="Login" v-if="!isLoggedIn">Login</router-link>
