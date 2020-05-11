@@ -6,7 +6,7 @@ const makeHeader = () => {
     };
     const jwt = localStorage.getItem("jwt");
     if (jwt !== null) {
-        header.Authorization = "Bearer" + jwt;
+        header.Authorization = "Bearer " + jwt;
     }
     return header;
 };
@@ -21,7 +21,7 @@ export const post = (endpoint, data) => {
     });
 };
 
-export const get = (endpoint) =>
+export const get = endpoint =>
     fetch(url + endpoint, {
         method: "GET",
         credentials: "include",
@@ -29,7 +29,7 @@ export const get = (endpoint) =>
         headers: makeHeader(),
     });
 
-export const del = (endpoint) =>
+export const del = endpoint =>
     fetch(url + endpoint, {
         method: "DELETE",
         credentials: "include",
@@ -37,7 +37,7 @@ export const del = (endpoint) =>
         headers: makeHeader(),
     });
 
-export const put = (endpoint) =>
+export const put = endpoint =>
     fetch(url + endpoint, {
         method: "PUT",
         credentials: "include",
