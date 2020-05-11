@@ -2,13 +2,12 @@
     <div class="card-deck">
         <div class="card" v-for="job in jobs" :key="job.efJobId">
             <div class="card-body">
-                <h4 class="card-title">{{ job.location }}  {{job.date}}</h4>
+                <h4 class="card-title">{{ job.location }}  {{new Date(job.startDate).toLocaleDateString()}}</h4>
                 <div class="card-text">
-                <h5>Description:</h5> <br>
-                    <h6>{{job.comments}}</h6>
-                    <button type="button" class="btn btn-secondary">Secondary</button>
+                  <h5>Description:</h5> <br>
+                  <h6>{{job.comments}}</h6>
+                  <button type="button" class="btn btn-secondary">View details</button>
                 </div>
-
             </div>
         </div>
     </div>
