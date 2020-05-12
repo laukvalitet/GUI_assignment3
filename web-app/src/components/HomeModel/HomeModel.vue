@@ -40,7 +40,7 @@ export default {
           },
 
             goToJobDetails(jobId) {
-              router.push({ name: "Job", params: { jobId: jobId }});
+              router.push({ name: "Job", params: { id: jobId }});
             }
         },
         
