@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"
         label="Date:"
@@ -33,11 +33,14 @@
         ></b-form-input>
       </b-form-group>
       
+      
 
 
       <b-button type="submit" variant="primary">Submit</b-button>
+      <h6>{{success}}</h6>
     </b-form>
   </div>
+
 
 </template>
 
@@ -56,31 +59,37 @@ export default{
                 text:'',
                 amount:0
             },
-            show: true
+            show: true,
+            success : ''
         } 
     },
     created(){
-        this.form.jobId = this.$route.params.jobId;
+        this.form.jobId = this.$route.params.id;
         const jwt = localStorage.getItem("jwt");
         const jwtDecoded = decode(jwt);
         this.form.modelId =  jwtDecoded.ModelId;
     },
     methods: {
         async onSubmit(){
+            this.form.amount = parseInt(this.form.amount);
+            this.form.modelId = parseInt(this.form.modelId);
+            this.form.jobId = parseInt(this.form.jobId);
+
             console.log(this.form);
             let result = await post("api/expenses",this.form);
-            if(result.status == 200)
+            if(result.status == 201)
             {
-                return true;
+                this.success = 'Expense has been added successfully.'
             }
             else
             {
-                return false;
+                this.success = 'Something went wrong, please try again.'
             }
         },
         onReset(){
 
         }
+
         
     }
 }
