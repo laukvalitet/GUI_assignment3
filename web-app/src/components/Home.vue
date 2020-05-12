@@ -1,5 +1,4 @@
 <template>
-
     <div class="container">
         <home-manager v-if="userRole === 'Manager'"></home-manager>
         <home-model v-if="userRole === 'Model'"></home-model>
@@ -14,7 +13,7 @@
 <script>
 import HomeManager from "@/components/HomeManager";
 import decode from "@/shared/decode.js";
-import HomeModel from "@/components/HomeModel/HomeModel";
+import HomeModel from "@/components/ModelViews/HomeModel";
 export default {
     data() {
         return {
@@ -23,7 +22,7 @@ export default {
     },
     components: {
         HomeManager,
-        HomeModel
+        HomeModel,
     },
     created() {
         const jwt = localStorage.getItem("jwt");

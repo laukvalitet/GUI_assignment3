@@ -7,7 +7,7 @@
 
 <script>
 import JobManager from "@/components/JobManager";
-import JobModel from "@/components/HomeModel/JobModel";
+import JobModel from "@/components/ModelViews/JobModel";
 
 import decode from "@/shared/decode.js";
 export default {
@@ -18,7 +18,7 @@ export default {
     },
     components: {
         JobManager,
-        JobModel
+        JobModel,
     },
     created() {
         const jwt = localStorage.getItem("jwt");
