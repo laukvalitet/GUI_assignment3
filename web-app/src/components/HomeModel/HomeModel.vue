@@ -2,7 +2,7 @@
 
   <div>
   <h3>Your upcoming jobs:</h3>
-    <div class="card-deck">
+    <div class="d-flex flex-column">
         <div class="card" v-for="job in jobs" :key="job.efJobId">
             <div class="card-body">
                 <h4 class="card-title">{{ job.location }} {{new Date(job.startDate).toLocaleDateString()}} </h4>
