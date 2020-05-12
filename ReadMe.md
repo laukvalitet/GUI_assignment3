@@ -1,4 +1,4 @@
-# Assignment 3: Gui Plan
+# Assignment 3
 # Gruppe 26
 
 # Group Members:
