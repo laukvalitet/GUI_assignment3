@@ -27,9 +27,9 @@
         </b-list-group>
         <b-button v-b-modal.modal-1>Add an expense</b-button>
 
-        <b-modal id="modal-1" title="BootstrapVue" hide-footer>
+        <b-modal ref="modal-1" id="modal-1" title="BootstrapVue" hide-footer >
             <p class="my-4">Please input information about your purchase:</p>
-            <expense-create></expense-create>
+            <expense-create v-on:success="hideModal()" ></expense-create>
         </b-modal>
     </div>
 </template>
@@ -59,7 +59,9 @@ export default {
         ExpenseCreate,
     },
     methods: {
-        addExpense() {},
+        hideModal() {
+        this.$refs['modal-1'].hide();
+      },
     },
 };
 </script>

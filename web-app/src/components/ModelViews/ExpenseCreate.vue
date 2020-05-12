@@ -79,7 +79,7 @@ export default{
             let result = await post("api/expenses",this.form);
             if(result.status == 201)
             {
-                this.success = 'Expense has been added successfully.'
+              this.$emit('success');
             }
             else
             {
