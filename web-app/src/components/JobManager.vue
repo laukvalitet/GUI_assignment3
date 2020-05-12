@@ -1,6 +1,18 @@
 <template>
     <div class="col-12" v-if="job !== null">
         <h1>{{ job.location }}</h1>
+        <br />
+        <h4>Total expenses for job</h4>
+        <table class="table table-light table-bordered">
+            <tbody>
+                <tr>
+                    <td scope="row">Expense</td>
+                    <td style="text-align: right">{{ expenses }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
 
         <table class="table table-striped table-light table-bordered">
             <thead class="thead-dark">
@@ -70,6 +82,7 @@ export default {
         return {
             job: null,
             models: [],
+            expenses: 0,
         };
     },
     methods: {
@@ -80,6 +93,13 @@ export default {
         async getModels() {
             const response = await get("api/models");
             this.models = await response.json();
+        },
+        async getExpenses() {
+            const response = await get("api/expenses");
+            const expensesArray = await response.json();
+            this.expenses = expensesArray
+                .filter(e => e.jobId == this.$route.params.id)
+                .reduce((sum, current) => sum + current.amount, 0);
         },
         diffModels() {
             return this.models.filter(
@@ -115,6 +135,7 @@ export default {
     async created() {
         const jobPromise = this.getJob();
         const modelPromise = this.getModels();
+        this.getExpenses();
         await Promise.all([jobPromise, modelPromise]);
         this.putIdsOnModelsInJob();
     },
