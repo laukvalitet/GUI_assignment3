@@ -30,7 +30,7 @@
                     </td>
                     <td>{{ model.email }}</td>
                     <td>{{ model.phoneNo }}</td>
-                    <td>
+                    <td style="text-align: right">
                         <button
                             class="btn btn-danger"
                             v-on:click="removeModel(model.efModelId)"
@@ -61,7 +61,7 @@
                     </td>
                     <td>{{ model.email }}</td>
                     <td>{{ model.phoneNo }}</td>
-                    <td>
+                    <td style="text-align: right">
                         <button
                             class="btn btn-primary"
                             v-on:click="addModel(model.efModelId)"
