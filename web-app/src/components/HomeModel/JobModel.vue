@@ -4,11 +4,14 @@
 
   <b-modal id="modal-1" title="BootstrapVue">
     <p class="my-4">Please input information about your purchase:</p>
+    <expense-create></expense-create>
   </b-modal>
 </div>
 </template>
 
 <script>
+import ExpenseCreate from "@/components/HomeModel/ExpenseCreate";
+
 
 export default{
     data() {
@@ -19,6 +22,9 @@ export default{
     },
     created(){
      
+    },
+    components:{
+      ExpenseCreate
     },
     methods:{
         addExpense(){

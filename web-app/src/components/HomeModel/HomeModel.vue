@@ -11,8 +11,6 @@
                   <h6>{{job.comments}}</h6>
                   <h5>Duration: {{job.days}} days</h5>
                   <router-link :to="{name: 'Job', params: { id: job.efJobId }}" class="stretched-link"></router-link>
-
-                  
                 </div>
             </div>
         </div>
@@ -41,8 +39,8 @@ export default {
             }
           },
 
-            goToJobDetails(jobid) {
-              router.push({ name: "Job", params: { id: jobid }});
+            goToJobDetails(jobId) {
+              router.push({ name: "Job", params: { jobId: jobId }});
             }
         },
         
